@@ -52,6 +52,6 @@ return require("packer").startup(function()
         "williamboman/mason.nvim",
         run = ":MasonUpdate" -- :MasonUpdate updates registry contents
     }
-    -- Set Github copilot
+    -- Github copilot
     use "github/copilot.vim"
 end)

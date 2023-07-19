@@ -15,7 +15,11 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 nvimtree.setup({
-  filters = {
-    dotfiles = false,
-  },
+    filters = {
+        git_ignored = false,
+        dotfiles = false,
+        custom = {
+            "^.git$",
+        },
+    },
 })
