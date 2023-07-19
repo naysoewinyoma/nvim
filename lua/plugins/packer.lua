@@ -2,17 +2,17 @@
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 --   ~/.config/nvim/pack/packer/start/packer.nvim
 return require("packer").startup(function()
-    use "wbthomason/packer.nvim"          -- https://github.com/wbthomason/packer.nvim
-    use { "catppuccin/nvim", as = "catppuccin" } -- https://github.com/catppuccin/nvim
+    use "wbthomason/packer.nvim"          
+    use { "catppuccin/nvim", as = "catppuccin" } 
     use 'nvim-lualine/lualine.nvim'
     use {
-        "nvim-tree/nvim-tree.lua",          -- https://github.com/nvim-tree/nvim-tree.lua
+        "nvim-tree/nvim-tree.lua",          
         requires = {
-            "nvim-tree/nvim-web-devicons",    -- https://github.com/nvim-tree/nvim-web-devicons
+            "nvim-tree/nvim-web-devicons", 
         },
     }
     use {
-        "nvim-telescope/telescope.nvim", -- https://github.com/nvim-telescope/telescope.nvim
+        "nvim-telescope/telescope.nvim", 
         requires = {
             "nvim-lua/plenary.nvim",
         },
@@ -22,22 +22,21 @@ return require("packer").startup(function()
         'nvim-telescope/telescope-fzf-native.nvim', 
         run = 'make'
     }
-    use "lewis6991/gitsigns.nvim"             -- https://github.com/lewis6991/gitsigns.nvim
+    use "lewis6991/gitsigns.nvim"             
     use {
-        "nvim-treesitter/nvim-treesitter",      -- https://github.com/nvim-treesitter/nvim-treesitter
+        "nvim-treesitter/nvim-treesitter",   
         run = ":TSUpdate"
     }
-    use "nvim-treesitter/nvim-treesitter-textobjects" -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-    use "fatih/vim-go"                        -- https://github.com/fatih/vim-go
-    use "hrsh7th/cmp-nvim-lsp"                -- https://github.com/hrsh7th/cmp-nvim-lsp
-    use "hrsh7th/nvim-cmp"                    -- https://github.com/hrsh7th/nvim-cmp
-    use "neovim/nvim-lspconfig"               -- https://github.com/neovim/nvim-lspconfig
-    use "onsails/lspkind-nvim"                -- https://github.com/onsails/lspkind-nvim
-    use "numToStr/Comment.nvim"               -- https://github.com/numToStr/Comment.nvim
+    use "nvim-treesitter/nvim-treesitter-textobjects" 
+    use "fatih/vim-go"                        
+    use "hrsh7th/cmp-nvim-lsp"               
+    use "hrsh7th/nvim-cmp"                  
+    use "neovim/nvim-lspconfig"            
+    use "onsails/lspkind-nvim"            
+    use "numToStr/Comment.nvim"               
     use({
         "L3MON4D3/LuaSnip",
-        -- follow latest release.
-        tag = "v1.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        tag = "v1.*", 
     })
     use {
         'akinsho/bufferline.nvim', 
@@ -53,4 +52,6 @@ return require("packer").startup(function()
         "williamboman/mason.nvim",
         run = ":MasonUpdate" -- :MasonUpdate updates registry contents
     }
+    -- Set Github copilot
+    use "github/copilot.vim"
 end)

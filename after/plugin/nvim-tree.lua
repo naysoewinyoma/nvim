@@ -1,5 +1,5 @@
-local setup, nvimtree = pcall(require, "nvim-tree")
-if not setup then return end
+local ok, nvimtree = pcall(require, "nvim-tree")
+if not ok then return end
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 vim.keymap.set("n", "<leader>b", ":NvimTreeFindFile<CR>") -- focus file explorer
@@ -15,13 +15,6 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 nvimtree.setup({
-  sort_by = "case_sensitive",
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
   filters = {
     dotfiles = false,
   },

@@ -1,4 +1,4 @@
-local setup, lualine = pcall(require, "lualine")
-if not setup then return end
+local ok, lualine = pcall(require, "lualine")
+if not ok then return end
 
 lualine.setup()

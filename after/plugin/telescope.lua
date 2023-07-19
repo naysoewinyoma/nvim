@@ -1,5 +1,5 @@
-local telescope_setup, telescope = pcall(require, "telescope")
-if not telescope_setup then return end
+local ok, telescope = pcall(require, "telescope")
+if not ok then return end
 
 telescope.load_extension('fzf')
 

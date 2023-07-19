@@ -1,4 +1,4 @@
-local setup, comment = pcall(require, "Comment")
-if not setup then return end
+local ok, comment = pcall(require, "Comment")
+if not ok then return end
 
 comment.setup()
