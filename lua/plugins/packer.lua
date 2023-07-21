@@ -27,17 +27,24 @@ return require("packer").startup(function()
         "nvim-treesitter/nvim-treesitter",   
         run = ":TSUpdate"
     }
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    }
     use "nvim-treesitter/nvim-treesitter-textobjects" 
-    use "fatih/vim-go"                        
+
+    -- lsp config
+    -- use "fatih/vim-go"                        
     use "hrsh7th/cmp-nvim-lsp"               
     use "hrsh7th/nvim-cmp"                  
     use "neovim/nvim-lspconfig"            
-    use "onsails/lspkind-nvim"            
-    use "numToStr/Comment.nvim"               
     use({
         "L3MON4D3/LuaSnip",
         tag = "v1.*", 
     })
+
+    use "numToStr/Comment.nvim"       
     use {
         'akinsho/bufferline.nvim', 
         tag = "*", 
@@ -48,10 +55,6 @@ return require("packer").startup(function()
         config = function() require("nvim-autopairs").setup {} end
     }
     use "windwp/nvim-ts-autotag"
-    use {
-        "williamboman/mason.nvim",
-        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-    }
     -- Github copilot
     use "github/copilot.vim"
     use "jose-elias-alvarez/null-ls.nvim"

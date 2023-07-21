@@ -1,5 +1,9 @@
-local ok, mason = pcall(require, "mason")
-if not ok then return end
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = { "tsserver" },
+})
 
-mason.setup()
-
+-- After setting up mason-lspconfig you may set up servers via lspconfig
+-- require("lspconfig").lua_ls.setup {}
+-- require("lspconfig").rust_analyzer.setup {}
+-- ...
