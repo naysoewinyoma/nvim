@@ -1,9 +1,6 @@
 local cmp_ok, cmp = pcall(require, "cmp")
 if not cmp_ok then return end
 
-local lspkind_ok, lspkind = pcall(require, "lspkind")
-if not lspkind_ok then return end
-
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_ok then return end
 
@@ -32,8 +29,7 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'ultisnips' },
+        { name = 'luasnip' },
     }, {
             { name = 'buffer' },
         })
@@ -65,27 +61,14 @@ lspconfig['gopls'].setup {
 }
 
 -- TypeScript
--- lspconfig["tsserver"].setup {
---     on_attach = on_attach,
---     filetypes = {
---         "typescript",
---         "typescriptreact",
---         "typescript.tsx"
---     },
---     cmd = {
---         "typescript-language-server", "--stdio"
---     }
--- }
-
-cmp.setup {
-    formatting = {
-        format = lspkind.cmp_format({
-            mode = "symbol_text",
-            maxwidth = 50,
-
-            before = function(entry, vim_item)
-                return vim_item
-            end
-        })
+lspconfig["tsserver"].setup {
+    on_attach = on_attach,
+    filetypes = {
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx"
+    },
+    cmd = {
+        "typescript-language-server", "--stdio"
     }
 }

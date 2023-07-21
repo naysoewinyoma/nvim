@@ -54,4 +54,5 @@ return require("packer").startup(function()
     }
     -- Github copilot
     use "github/copilot.vim"
+    use "jose-elias-alvarez/null-ls.nvim"
 end)
