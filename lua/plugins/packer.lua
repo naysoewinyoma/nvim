@@ -44,6 +44,7 @@ return require("packer").startup(function()
         tag = "v1.*", 
     })
 
+    use {"akinsho/toggleterm.nvim", tag = '*'}
     use "numToStr/Comment.nvim"       
     use {
         'akinsho/bufferline.nvim', 
