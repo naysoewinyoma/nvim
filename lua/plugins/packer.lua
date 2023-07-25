@@ -3,7 +3,6 @@
 --   ~/.config/nvim/pack/packer/start/packer.nvim
 return require("packer").startup(function()
     use "wbthomason/packer.nvim"          
-    use { "catppuccin/nvim", as = "catppuccin" } 
     use 'nvim-lualine/lualine.nvim'
     use {
         "nvim-tree/nvim-tree.lua",          
@@ -44,7 +43,6 @@ return require("packer").startup(function()
         tag = "v1.*", 
     })
 
-    use {"akinsho/toggleterm.nvim", tag = '*'}
     use "numToStr/Comment.nvim"       
     use {
         'akinsho/bufferline.nvim', 
@@ -59,4 +57,8 @@ return require("packer").startup(function()
     -- Github copilot
     use "github/copilot.vim"
     use "jose-elias-alvarez/null-ls.nvim"
+
+    -- Install without configuration
+    use ({ 'projekt0n/github-nvim-theme' })
+
 end)
