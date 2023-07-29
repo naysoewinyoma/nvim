@@ -2,6 +2,7 @@ local ok, nvimtree = pcall(require, "nvim-tree")
 if not ok then return end
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+vim.keymap.set("n", "<leader>b", ":NvimTreeFindFile<CR>") 
 
 
 -- vim.opt.foldmethod = "expr"
