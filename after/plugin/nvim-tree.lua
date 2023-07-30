@@ -38,7 +38,7 @@ nvimtree.setup({
     },
 })
 
-local function toggle_explorer_focus()
+function toggle_explorer_focus()
     if vim.bo.filetype == "NvimTree" then
         vim.cmd.wincmd "p"
     else
