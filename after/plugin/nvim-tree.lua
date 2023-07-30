@@ -2,8 +2,6 @@ local ok, nvimtree = pcall(require, "nvim-tree")
 if not ok then return end
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
-vim.keymap.set("n", "<leader>b", ":NvimTreeFindFile<CR>") 
-
 
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -39,3 +37,14 @@ nvimtree.setup({
         },
     },
 })
+
+local function toggle_explorer_focus()
+    if vim.bo.filetype == "NvimTree" then
+        vim.cmd.wincmd "p"
+    else
+
+        vim.cmd(":NvimTreeFindFile")
+    end
+end
+
+vim.keymap.set("n", "<leader>o", ":lua toggle_explorer_focus()<CR>", {desc = "Toggle Explorer Focus"}) 

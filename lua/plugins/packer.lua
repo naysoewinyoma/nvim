@@ -2,28 +2,28 @@
 -- git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 --   ~/.config/nvim/pack/packer/start/packer.nvim
 return require("packer").startup(function()
-    use "wbthomason/packer.nvim"          
+    use "wbthomason/packer.nvim"
     use 'nvim-lualine/lualine.nvim'
     use {
-        "nvim-tree/nvim-tree.lua",          
+        "nvim-tree/nvim-tree.lua",
         requires = {
-            "nvim-tree/nvim-web-devicons", 
+            "nvim-tree/nvim-web-devicons",
         },
     }
     use {
-        "nvim-telescope/telescope.nvim", 
+        "nvim-telescope/telescope.nvim",
         requires = {
             "nvim-lua/plenary.nvim",
         },
         branch = "0.1.x",
     }
-    use { 
-        'nvim-telescope/telescope-fzf-native.nvim', 
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
         run = 'make'
     }
-    use "lewis6991/gitsigns.nvim"             
+    use "lewis6991/gitsigns.nvim"
     use {
-        "nvim-treesitter/nvim-treesitter",   
+        "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
     }
     use {
@@ -31,22 +31,22 @@ return require("packer").startup(function()
         "williamboman/mason-lspconfig.nvim",
         run = ":MasonUpdate" -- :MasonUpdate updates registry contents
     }
-    use "nvim-treesitter/nvim-treesitter-textobjects" 
+    use "nvim-treesitter/nvim-treesitter-textobjects"
 
     -- lsp config
-    -- use "fatih/vim-go"                        
-    use "hrsh7th/cmp-nvim-lsp"               
-    use "hrsh7th/nvim-cmp"                  
-    use "neovim/nvim-lspconfig"            
+    -- use "fatih/vim-go"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/nvim-cmp"
+    use "neovim/nvim-lspconfig"
     use({
         "L3MON4D3/LuaSnip",
-        tag = "v1.*", 
+        tag = "v1.*",
     })
 
-    use "numToStr/Comment.nvim"       
+    use "numToStr/Comment.nvim"
     use {
-        'akinsho/bufferline.nvim', 
-        tag = "*", 
+        'akinsho/bufferline.nvim',
+        tag = "*",
         requires = 'nvim-tree/nvim-web-devicons'
     }
     use {
@@ -59,7 +59,7 @@ return require("packer").startup(function()
     use "jose-elias-alvarez/null-ls.nvim"
 
     -- Install without configuration
-    use ({ 'projekt0n/github-nvim-theme' })
+    use({ 'projekt0n/github-nvim-theme' })
 
     -- Lua
     use {
@@ -74,4 +74,5 @@ return require("packer").startup(function()
             }
         end
     }
+    use "lukas-reineke/indent-blankline.nvim"
 end)
