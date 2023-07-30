@@ -14,4 +14,4 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.bo.softtabstop = 4
 
-vim.opt.winbar = "%f"
+-- vim.opt.winbar = "%f"
