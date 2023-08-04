@@ -9,9 +9,8 @@ bufferline.setup {
     options = {
         offsets = {{
             filetype = "NvimTree",
-            text = "EXPLORER",
             text_align = "left",
-            separator = true
+            separator = true,
         }},
     }
 }

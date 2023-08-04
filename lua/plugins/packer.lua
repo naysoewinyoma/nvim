@@ -26,22 +26,20 @@ return require("packer").startup(function()
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
     }
-    use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-    }
     use "nvim-treesitter/nvim-treesitter-textobjects"
 
-    -- lsp config
-    -- use "fatih/vim-go"
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/nvim-cmp"
-    use "neovim/nvim-lspconfig"
     use({
         "L3MON4D3/LuaSnip",
         tag = "v1.*",
     })
+
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
 
     use "numToStr/Comment.nvim"
     use {
@@ -74,5 +72,6 @@ return require("packer").startup(function()
             }
         end
     }
+
     use "lukas-reineke/indent-blankline.nvim"
 end)
