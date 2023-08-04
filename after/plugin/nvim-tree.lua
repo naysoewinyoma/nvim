@@ -29,9 +29,6 @@ nvimtree.setup({
             "^.git$",
         },
     },
-    view = {
-        hide_root_folder = true,
-    },
     renderer = {
         highlight_git = true,
         icons = {
@@ -39,6 +36,7 @@ nvimtree.setup({
                 git = false,
             }
         },
+        root_folder_label = false
     },
 })
 
