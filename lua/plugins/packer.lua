@@ -28,6 +28,7 @@ return require("packer").startup(function()
     }
     use "nvim-treesitter/nvim-treesitter-textobjects"
 
+    -- auto completation
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/nvim-cmp"
     use({
@@ -35,6 +36,7 @@ return require("packer").startup(function()
         tag = "v1.*",
     })
 
+    -- mason lsp package manager
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
