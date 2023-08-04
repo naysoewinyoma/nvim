@@ -38,7 +38,7 @@ nvimtree.setup({
             show = {
                 git = false,
             }
-        }
+        },
     },
 })
 
