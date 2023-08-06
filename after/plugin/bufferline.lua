@@ -12,9 +12,6 @@ bufferline.setup {
             text_align = "left",
             separator = true,
             highlight = "Directory",
-            text = function()
-                return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-            end
         }},
         numbers = "buffer_id",
     }

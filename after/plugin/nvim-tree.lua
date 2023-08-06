@@ -36,7 +36,7 @@ nvimtree.setup({
                 git = false,
             }
         },
-        root_folder_label = false
+        root_folder_label = ":t",
     },
 })
 
