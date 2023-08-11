@@ -9,10 +9,10 @@ vim.opt.autoindent=true
 vim.opt.textwidth=120
 vim.opt.clipboard="unnamed"
 vim.opt.scrollbind=false
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.bo.softtabstop = 4
+vim.bo.softtabstop = 2
 vim.opt.wrap = false
 
 -- vim.opt.winbar = "%f"
