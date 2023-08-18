@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 vim.opt.encoding="utf-8"
 vim.opt.compatible=false
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.laststatus = 2
 vim.opt.spelllang="en_us"
@@ -14,5 +15,3 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 vim.opt.wrap = false
-
--- vim.opt.winbar = "%f"
