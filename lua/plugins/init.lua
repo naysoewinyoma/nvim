@@ -6,7 +6,6 @@ return {
     },
     lazy = true
   },
-  "lewis6991/gitsigns.nvim",
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -34,13 +33,6 @@ return {
     lazy = false,
   },
   {
-    'akinsho/bufferline.nvim',
-    version = "*",
-    dependencies = {
-      'nvim-tree/nvim-web-devicons'
-    }
-  },
-  {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {} 
@@ -58,5 +50,3 @@ return {
   },
   "sindrets/diffview.nvim",
 }
-
-
