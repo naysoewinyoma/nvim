@@ -15,6 +15,7 @@ return {
         highlight = "Directory",
       }},
       numbers = "buffer_id",
+      diagnostics = "nvim_lsp",
     }
   },
 }
