@@ -9,4 +9,4 @@ function run_go_file()
     end
 end
 
-vim.cmd('command! GoRun lua run_go_file()')
+vim.api.nvim_create_user_command("GoRun", run_go_file, {})
