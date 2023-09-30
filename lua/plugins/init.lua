@@ -1,12 +1,5 @@
 return {
   {
-    "nvim-tree/nvim-tree.lua",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    lazy = true
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     dependencies = {

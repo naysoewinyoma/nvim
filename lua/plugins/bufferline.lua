@@ -11,8 +11,6 @@ return {
       offsets = {{
         filetype = "NvimTree",
         text_align = "left",
-        separator = true,
-        highlight = "Directory",
       }},
       numbers = "buffer_id",
       diagnostics = "nvim_lsp",
