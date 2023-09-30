@@ -2,15 +2,18 @@ return  {
   'nvim-lualine/lualine.nvim',
   config = function()
     require("lualine").setup({
-      options = {
-        disabled_filetypes = {
-          "NvimTree",
-        },
+      -- options = {
+      --   disabled_filetypes = {
+      --     "NvimTree",
+      --   },
+      -- },
+      extensions = {
+        "nvim-tree",
       },
       sections = {
         lualine_a = {},
         lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
+        lualine_c = {},
         lualine_x = {'encoding', '', 'filetype'},
         lualine_y = {},
         lualine_z = {'location'}
