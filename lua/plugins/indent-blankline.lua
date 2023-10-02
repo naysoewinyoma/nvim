@@ -6,6 +6,6 @@ return {
     -- indent = {
     --   char = "│",
     -- },
-    -- scope = { enabled = false }
+    scope = { enabled = false }
   }
 }
