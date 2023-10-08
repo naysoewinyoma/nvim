@@ -35,3 +35,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 require("utils")
+
+-- keys mapping
+vim.keymap.set("n", "<leader>tf", ":Neotest run<CR>") -- run test
