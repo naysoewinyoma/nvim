@@ -47,6 +47,8 @@ return {
       -- refer to the configuration section below
     }
   },
-  "sindrets/diffview.nvim" ,
+  "sindrets/diffview.nvim",
   "mfussenegger/nvim-dap",
+  "leoluz/nvim-dap-go",
+  "rcarriga/nvim-dap-ui",
 }
