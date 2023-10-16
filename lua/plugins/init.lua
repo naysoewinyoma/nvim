@@ -31,7 +31,8 @@ return {
     opts = {} 
   },
   "github/copilot.vim",
-  "jose-elias-alvarez/null-ls.nvim",
+  -- "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   "projekt0n/github-nvim-theme",
   {
     "folke/which-key.nvim",
@@ -47,5 +48,5 @@ return {
     }
   },
   "sindrets/diffview.nvim" ,
-  "mfussenegger/nvim-dap"
+  "mfussenegger/nvim-dap",
 }
