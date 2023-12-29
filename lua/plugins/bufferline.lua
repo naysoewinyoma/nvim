@@ -14,6 +14,14 @@ return {
       }},
       numbers = "buffer_id",
       diagnostics = "nvim_lsp",
+      disabled_filetypes = {
+        statusline = {
+          "dapui_watches",
+          "dapui_stacks",
+          "dapui_breakpoints",
+          "dapui_scopes",
+        },
+      },
     }
   },
 }
