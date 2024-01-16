@@ -1,11 +1,10 @@
 return  {
   'nvim-lualine/lualine.nvim',
   opts = {
-    -- options = {
-    --   disabled_filetypes = {
-    --     "NvimTree",
-    --   },
-    -- },
+    options = {
+      component_separators = '|',
+      section_separators = '',
+    },
     extensions = {
       "nvim-tree",
     },

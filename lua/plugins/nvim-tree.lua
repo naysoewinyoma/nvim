@@ -36,7 +36,6 @@ return  {
             folder = false,
           }
         },
-        -- root_folder_label = ":t",
         root_folder_label = false,
       },
     })
