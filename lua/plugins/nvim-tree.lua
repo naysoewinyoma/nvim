@@ -14,12 +14,12 @@ return  {
           min = vim.diagnostic.severity.HINT,
           max = vim.diagnostic.severity.ERROR,
         },
-        icons = {
-          hint = "",
-          info = "",
-          warning = "",
-          error = "",
-        },
+        -- icons = {
+        --   hint = "",
+        --   info = "",
+        --   warning = "",
+        --   error = "",
+        -- },
       },
       filters = {
         git_ignored = false,

@@ -19,6 +19,9 @@ vim.opt.wrap = false
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
+-- vim.g.netrw_liststyle=3
+-- vim.g.netrw_banner = 0
+-- vim.g.netrw_list_hide = ".git"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -38,37 +41,36 @@ require("utils")
 
 -- keys mapping
 vim.keymap.set("n", "<leader>tf", ":Neotest run<CR>") -- run test
+-- vim.keymap.set("n", "<leader>o", ":Lex<CR>:vertical resize 30<CR>", { noremap = true, silent = true}) 
 
--- local function git_branch()
---     local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
---     if string.len(branch) > 0 then
---         return branch
---     else
---         return ":"
---     end
--- end
+local function git_branch()
+    local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+    if string.len(branch) > 0 then
+        return branch
+    else
+        return ":"
+    end
+end
 
--- local function statusline()
---     local set_color_1 = "%#PmenuSel#"
---     local branch = git_branch()
---     local set_color_2 = "%#LineNr#"
---     local file_name = " %f"
---     local modified = "%m"
---     local align_right = "%="
---     local fileencoding = " %{&fileencoding?&fileencoding:&encoding}"
---     local linecol = " %l:%c"
---
---     return string.format(
---         "%s %s %s%s%s%s%s%s",
---         set_color_1,
---         branch,
---         set_color_2,
---         file_name,
---         modified,
---         align_right,
---         fileencoding,
---         linecol
---     )
--- end
---
--- vim.opt.statusline = statusline()
+local function statusline()
+    local set_color_1 = "%#PmenuSel#"
+    local branch = git_branch()
+    local set_color_2 = "%#LineNr#"
+    local file_name = " %t"
+    local align_right = "%="
+    local fileencoding = " %{&fileencoding?&fileencoding:&encoding}"
+    local linecol = " %l:%c "
+
+    return string.format(
+        "%s %s %s%s%s%s%s",
+        set_color_1,
+        branch,
+        set_color_2,
+        file_name,
+        align_right,
+        fileencoding,
+        linecol
+    )
+end
+
+vim.opt.statusline = statusline()
