@@ -37,40 +37,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-require("utils")
+require("customize")
 
 -- keys mapping
 vim.keymap.set("n", "<leader>tf", ":Neotest run<CR>") -- run test
 -- vim.keymap.set("n", "<leader>o", ":Lex<CR>:vertical resize 30<CR>", { noremap = true, silent = true}) 
-
-local function git_branch()
-    local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-    if string.len(branch) > 0 then
-        return branch
-    else
-        return ":"
-    end
-end
-
-local function statusline()
-    local set_color_1 = "%#PmenuSel#"
-    local branch = git_branch()
-    local set_color_2 = "%#LineNr#"
-    local file_name = " %t"
-    local align_right = "%="
-    local fileencoding = " %{&fileencoding?&fileencoding:&encoding}"
-    local linecol = " %l:%c "
-
-    return string.format(
-        "%s %s %s%s%s%s%s",
-        set_color_1,
-        branch,
-        set_color_2,
-        file_name,
-        align_right,
-        fileencoding,
-        linecol
-    )
-end
-
-vim.opt.statusline = statusline()

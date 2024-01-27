@@ -8,7 +8,6 @@ vim.opt.foldenable=false
 treesitter.setup {
     ensure_installed = {
         "go",
-        "tsx",
     },
     indent = {
         enable = true,
