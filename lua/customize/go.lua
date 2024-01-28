@@ -1,5 +1,5 @@
 -- Custom functions
-function run_go_file()
+local function run_go_file()
     local filename = vim.fn.expand('%')
     if vim.fn.filereadable(filename) == 1 then
         local output = vim.fn.system('go run ' .. filename)

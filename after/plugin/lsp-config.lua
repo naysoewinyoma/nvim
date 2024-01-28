@@ -1,35 +1,8 @@
-local cmp_ok, cmp = pcall(require, "cmp")
-if not cmp_ok then return end
-
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_ok then return end
 
 local cmp_nvim_lsp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_ok then return end
-
-cmp.setup({
-    snippet = {
-        -- REQUIRED - you must specify a snippet engine
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        end,
-    },
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    }),
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-    })
-})
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -51,21 +24,14 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
-require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = {
-        "gopls",
-    },
-})
-
-require("mason-lspconfig").setup_handlers {
-    -- The first entry (without a key) will be the default handler
-    -- and will be called for each installed server that doesn't have
-    -- a dedicated handler.
-    function (server_name) -- default handler (optional)
-        lspconfig[server_name].setup {
-            capabilities = capabilities,
-            on_attach = on_attach,
-        }
-    end
+local servers = {
+    "gopls",
+    "tsserver",
 }
+
+for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+    }
+end

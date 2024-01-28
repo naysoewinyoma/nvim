@@ -14,12 +14,6 @@ return  {
           min = vim.diagnostic.severity.HINT,
           max = vim.diagnostic.severity.ERROR,
         },
-        -- icons = {
-        --   hint = "",
-        --   info = "",
-        --   warning = "",
-        --   error = "",
-        -- },
       },
       filters = {
         git_ignored = false,
@@ -40,16 +34,15 @@ return  {
       },
     })
 
-    function toggle_explorer_focus()
+    local function toggle_explorer_focus()
       if vim.bo.filetype == "NvimTree" then
         vim.cmd.wincmd "p"
       else
-
         vim.cmd(":NvimTreeFindFile")
       end
     end
 
-    vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
-    vim.keymap.set("n", "<leader>o", ":lua toggle_explorer_focus()<CR>", {desc = "Toggle Explorer Focus"}) 
-  end
+    vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") 
+    vim.keymap.set("n", "<leader>o", function() toggle_explorer_focus() end, { desc = "Toggle Explorer Focus" })
+end
 }

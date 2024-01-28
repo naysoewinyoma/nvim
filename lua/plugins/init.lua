@@ -6,6 +6,7 @@ return {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
   },
+  "neovim/nvim-lspconfig",
   -- auto completation
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
@@ -14,21 +15,15 @@ return {
     version = "2.*",
   },
   {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  },
-  {
     'numToStr/Comment.nvim',
-    opts = {
-      -- add any options here
-    },
+    opts = {},
     lazy = false,
   },
+  "nvim-pack/nvim-spectre",
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
-    opts = {} 
+    opts = {} ,
   },
   "github/copilot.vim",
   "nvimtools/none-ls.nvim",
