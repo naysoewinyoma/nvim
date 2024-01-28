@@ -28,7 +28,14 @@ return {
   },
   "github/copilot.vim",
   "nvimtools/none-ls.nvim",
-  "projekt0n/github-nvim-theme",
+  {
+    "projekt0n/github-nvim-theme",
+    config = function() 
+      require("github-theme").setup({})
+
+      vim.cmd[[colorscheme github_dark_dimmed]]
+    end
+  },
   "sindrets/diffview.nvim",
   "mfussenegger/nvim-dap",
   "leoluz/nvim-dap-go",

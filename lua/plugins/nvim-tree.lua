@@ -17,7 +17,7 @@ return  {
       },
       filters = {
         git_ignored = false,
-        dotfiles = false,
+        -- dotfiles = false,
         custom = {
           "^.git$",
         },
@@ -26,6 +26,7 @@ return  {
         highlight_git = true,
         icons = {
           show = {
+            -- file = false,
             git = false,
             folder = false,
           }

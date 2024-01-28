@@ -15,13 +15,14 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 vim.opt.wrap = false
+vim.opt.termguicolors = true
 
+-- Customize netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true
--- vim.g.netrw_liststyle=3
--- vim.g.netrw_banner = 0
+-- vim.g.netrw_liststyle = 3
 -- vim.g.netrw_list_hide = ".git"
+-- vim.g.netrw_keepdir = 0
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -41,4 +42,3 @@ require("customize")
 
 -- keys mapping
 vim.keymap.set("n", "<leader>tf", ":Neotest run<CR>") -- run test
--- vim.keymap.set("n", "<leader>o", ":Lex<CR>:vertical resize 30<CR>", { noremap = true, silent = true}) 

@@ -27,6 +27,7 @@ end
 local servers = {
     "gopls",
     "tsserver",
+    "pyright",
 }
 
 require("mason").setup()
