@@ -39,5 +39,11 @@ return {
   "sindrets/diffview.nvim",
   "mfussenegger/nvim-dap",
   "leoluz/nvim-dap-go",
-  "rcarriga/nvim-dap-ui"
+  "rcarriga/nvim-dap-ui",
+  {
+    "andythigpen/nvim-coverage",
+    config = function()
+      require("coverage").setup({})
+    end
+  },
 }
