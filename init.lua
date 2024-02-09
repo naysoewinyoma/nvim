@@ -18,8 +18,8 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 
 -- Customize netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 -- vim.g.netrw_liststyle = 3
 -- vim.g.netrw_list_hide = ".git"
 -- vim.g.netrw_keepdir = 0
@@ -40,5 +40,4 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 require("customize")
 
--- keys mapping
-vim.keymap.set("n", "<leader>tf", ":Neotest run<CR>") -- run test
+vim.keymap.set("n", "<leader>tf", ":TestNearest<CR>") -- run test

@@ -6,7 +6,7 @@ local function git_branch()
     if string.len(branch) > 0 then
         return " " .. branch
     else
-        return ":"
+        return nil  -- return nil when the branch is empty
     end
 end
 
@@ -14,22 +14,24 @@ local function statusline()
     local set_color_1 = "%#PmenuSel#"
     local branch = git_branch()
     local set_color_2 = "%#LineNr#"
-    local file_name = "[%t]"
+    local file_name = " %t "
     local align_right = "%="
     local file_type = " %{&filetype}"
     local fileencoding = " %{&fileencoding?&fileencoding:&encoding}"
     local linecol = " [%l:%c] "
 
+    local status_line_format = "%s%s%s%s%s%s%s%s"
+
     return string.format(
-        "%s %s %s%s%s%s%s%s",
+        status_line_format,
         set_color_1,
-        branch,
-        set_color_2,
+        branch and " " .. branch .. " " or "",
+        branch and set_color_2 or "",
         file_name,
         align_right,
         file_type,
         fileencoding,
-        linecol
+        branch and linecol or ""
     )
 end
 
