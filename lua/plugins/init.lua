@@ -36,7 +36,6 @@ return {
       vim.cmd[[colorscheme github_dark_dimmed]]
     end
   },
-  "sindrets/diffview.nvim",
   "mfussenegger/nvim-dap",
   "leoluz/nvim-dap-go",
   "rcarriga/nvim-dap-ui",
