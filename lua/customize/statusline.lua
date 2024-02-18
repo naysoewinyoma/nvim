@@ -29,7 +29,7 @@ local function statusline()
         align_right,
         file_type,
         fileencoding,
-        branch and linecol or " "
+        linecol
     )
 end
 
