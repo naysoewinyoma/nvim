@@ -1,18 +1,16 @@
 -- Customize statusline
 vim.opt.laststatus = 3
 
-local function git_branch()
-    local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-    if string.len(branch) > 0 then
-        return " " .. branch
-    else
-        return nil  -- return nil when the branch is empty
-    end
-end
-
 local function statusline()
-    local set_color_1 = "%#PmenuSel#"
+    local function git_branch()
+        local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+        return string.len(branch) > 0 and " " .. branch or nil
+    end
+
     local branch = git_branch()
+    local color_1 = branch and "%#LineNr#" or "%#PmenuSel#"
+
+    local set_color_1 =  "%#PmenuSel#"
     local set_color_2 = "%#LineNr#"
     local file_name = " %t "
     local align_right = "%="
@@ -26,12 +24,12 @@ local function statusline()
         status_line_format,
         set_color_1,
         branch and " " .. branch .. " " or "",
-        branch and set_color_2 or "",
+        set_color_2,
         file_name,
         align_right,
         file_type,
         fileencoding,
-        branch and linecol or ""
+        branch and linecol or " "
     )
 end
 
