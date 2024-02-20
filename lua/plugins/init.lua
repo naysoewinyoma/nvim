@@ -46,4 +46,5 @@ return {
     end
   },
   "vim-test/vim-test",
+  "tpope/vim-fugitive",
 }
