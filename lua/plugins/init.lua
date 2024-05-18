@@ -16,12 +16,6 @@ return {
     version = "2.*",
   },
   {
-    'numToStr/Comment.nvim',
-    opts = {},
-    lazy = false,
-  },
-  "nvim-pack/nvim-spectre",
-  {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {} ,
@@ -45,6 +39,5 @@ return {
       require("coverage").setup({})
     end
   },
-  "vim-test/vim-test",
-  "tpope/vim-fugitive",
+  "vim-test/vim-test"
 }
