@@ -39,5 +39,5 @@ return {
       require("coverage").setup({})
     end
   },
-  "vim-test/vim-test"
+  "vim-test/vim-test",
 }

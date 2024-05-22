@@ -8,7 +8,12 @@ return {
     }
   },
   config = function() 
-    require('telescope').load_extension('fzf')
+    require('telescope').setup{
+      defaults = {
+        preview = false
+      }
+    }
+    require("telescope").load_extension('fzf')
     local builtin = require('telescope.builtin')
 
     vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = "find files"})
