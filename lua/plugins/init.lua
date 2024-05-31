@@ -5,6 +5,23 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
+    config = function () 
+      local configs = require("nvim-treesitter.configs")
+      configs.setup({
+        ensure_installed = { 
+          "c", 
+          "go",
+          "lua", 
+          "vim", 
+          "javascript", 
+          "typescript",
+          "html" ,
+        },
+        sync_install = false,
+        highlight = { enable = true },
+        indent = { enable = true },  
+      })
+    end
   },
   "neovim/nvim-lspconfig",
   "williamboman/mason.nvim",
@@ -26,13 +43,9 @@ return {
     "projekt0n/github-nvim-theme",
     config = function() 
       require("github-theme").setup({})
-
       vim.cmd[[colorscheme github_dark_dimmed]]
     end
   },
-  "mfussenegger/nvim-dap",
-  "leoluz/nvim-dap-go",
-  "rcarriga/nvim-dap-ui",
   {
     "andythigpen/nvim-coverage",
     config = function()

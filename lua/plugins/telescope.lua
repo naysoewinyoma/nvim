@@ -1,5 +1,5 @@
 return {
-  'nvim-telescope/telescope.nvim', tag = '0.1.2',
+  'nvim-telescope/telescope.nvim', tag = '0.1.8',
   dependencies = { 
     'nvim-lua/plenary.nvim',
     { 
@@ -22,5 +22,6 @@ return {
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, {desc = "help tags"})
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {desc = "help tags"})
     vim.keymap.set('n', '<leader>fx', builtin.treesitter, {desc = "treesitter"})
+    vim.keymap.set('n', '<leader>gs', builtin.git_status, {desc = "git status"})
   end
 }
