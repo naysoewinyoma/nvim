@@ -7,18 +7,18 @@ local function statusline()
 
     local branch = git_branch()
     local set_color =  "%#LineNr#"
-    local file_name = " %t " .. "%m"
+    local file_name = "%t " .. "%m"
     local align_right = "%="
     local file_type = " %{&filetype}"
     local fileencoding = " %{&fileencoding?&fileencoding:&encoding}"
-    local linecol = " [%l:%c] "
+    local linecol = " [%l:%c]"
 
     local status_line_format = "%s%s%s%s%s%s%s"
 
     return string.format(
         status_line_format,
         set_color,
-        branch and " " .. branch .. " >" or "",
+        branch and " " .. branch .. " > " or "",
         file_name,
         align_right,
         file_type,
