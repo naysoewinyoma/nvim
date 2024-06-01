@@ -5,45 +5,36 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    config = function () 
+    config = function()
       local configs = require("nvim-treesitter.configs")
       configs.setup({
-        ensure_installed = { 
-          "c", 
+        ensure_installed = {
+          "c",
           "go",
-          "lua", 
-          "vim", 
-          "javascript", 
+          "lua",
+          "vim",
+          "javascript",
           "typescript",
-          "html" ,
+          "html",
         },
         sync_install = false,
         highlight = { enable = true },
-        indent = { enable = true },  
+        indent = { enable = true },
       })
     end
-  },
-  "neovim/nvim-lspconfig",
-  "williamboman/mason.nvim",
-  -- auto completation
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/nvim-cmp",
-  {
-    "L3MON4D3/LuaSnip",
-    version = "2.*",
   },
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
-    opts = {} ,
+    opts = {},
   },
   "github/copilot.vim",
   "nvimtools/none-ls.nvim",
   {
     "projekt0n/github-nvim-theme",
-    config = function() 
+    config = function()
       require("github-theme").setup({})
-      vim.cmd[[colorscheme github_dark_dimmed]]
+      vim.cmd [[colorscheme github_dark_dimmed]]
     end
   },
   {

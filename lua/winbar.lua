@@ -10,7 +10,7 @@ local function update_winbar()
 
   -- Remove the current working directory from the path
   if path:find(cwd, 1, true) == 1 then
-    path = path:sub(#cwd + 2)  -- +2 to account for the trailing '/'
+    path = path:sub(#cwd + 2) -- +2 to account for the trailing '/'
   end
 
   -- Remove the home directory from the path (if necessary)
@@ -23,7 +23,7 @@ local function update_winbar()
 end
 
 -- Set up autocmd to update the winbar on BufEnter and BufWinEnter events
-vim.api.nvim_create_autocmd({'BufEnter', 'BufWinEnter', 'BufWritePost', 'CursorMoved'}, {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter', 'BufWritePost', 'CursorMoved' }, {
   callback = update_winbar,
 })
 
