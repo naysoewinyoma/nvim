@@ -20,7 +20,6 @@ vim.opt.wrap = false
 vim.keymap.set("n", "<leader>tf", ":TestNearest<CR>") -- run test
 
 -- create user command to run golang main file
--- :GoRun
 vim.cmd("command! GoRun :!go run %")
 --
 -- file indent tab based on file type
