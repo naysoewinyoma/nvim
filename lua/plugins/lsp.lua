@@ -65,8 +65,9 @@ return {
       ensure_installed = {
         "lua_ls",
         "gopls",
-        "tsserver",
+        -- "ts_ls",
         "pyright",
+        "jdtls",
       },
       handlers = {
         function(server_name)
@@ -91,16 +92,5 @@ return {
         end,
       }
     })
-    -- local servers = {
-    --     "gopls",
-    --     "tsserver",
-    --     "pyright",
-    -- }
-    -- for _, lsp in ipairs(servers) do
-    --     lspconfig[lsp].setup {
-    --         capabilities = capabilities,
-    --         on_attach = on_attach,
-    --     }
-    -- end
   end
 }
